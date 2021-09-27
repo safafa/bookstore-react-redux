@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 const Book = ({ title, author, rmBook }) => (
   <li>
     <span>{title}</span>
+    <br />
     <span>{author}</span>
+    <br />
     <button type="button" onClick={rmBook}>Remove</button>
   </li>
 );
