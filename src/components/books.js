@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import Book from './book';
 import Form from './form';
-import { addBook } from '../redux/books/books';
+import { addBook, removeBook } from '../redux/books/books';
 
 const Books = ({ store }) => {
   const [info, setInfo] = useState(store.getState().booksReducer);
@@ -22,8 +22,8 @@ const Books = ({ store }) => {
   };
 
   const rmBook = (book) => {
-    const newInfo = info.filter((livre) => livre !== book);
-    localStorage.setItem('storeBook', JSON.stringify(newInfo));
+    dispatch(removeBook(book));
+    localStorage.setItem('storeBook', JSON.stringify(store.getState().booksReducer));
     setInfo(JSON.parse(localStorage.getItem('storeBook')));
   };
 
