@@ -1,12 +1,12 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import Book from './book';
 import Form from './form';
 import { addBook, removeBook } from '../redux/books/books';
+import store from '../redux/configureStore';
 
-const Books = ({ store }) => {
+const Books = () => {
   const [info, setInfo] = useState(store.getState().booksReducer);
   const dispatch = useDispatch();
 
