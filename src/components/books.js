@@ -1,46 +1,29 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
 import Book from './book';
 import Form from './form';
+import { addBook, removeBook } from '../redux/books/books';
+import store from '../redux/configureStore';
 
 const Books = () => {
-  if (JSON.parse(localStorage.getItem('storeBook')) === null) {
-    const initInfo = [
-      {
-        title: 'Book 1',
-        author: 'Author1',
-      },
-      {
-        title: 'Book 2',
-        author: 'Author2',
-      },
-      {
-        title: 'Book 3',
-        author: 'Author3',
-      },
-      {
-        title: 'Book 4',
-        author: 'Author4',
-      },
-      {
-        title: 'Book 5',
-        author: 'Author5',
-      },
-    ];
-    localStorage.setItem('storeBook', JSON.stringify(initInfo));
-  }
+  const [info, setInfo] = useState(store.getState().booksReducer);
+  const dispatch = useDispatch();
 
-  const [info, setInfo] = useState(JSON.parse(localStorage.getItem('storeBook')));
-
-  const addBook = (book) => {
-    const newInfo = info;
-    newInfo.push(book);
-    localStorage.setItem('storeBook', JSON.stringify(newInfo));
+  const submitBookToStore = (book) => {
+    const newBook = {
+      id: uuidv4(), // make sure it's unique
+      title: book.title,
+      author: book.author,
+    };
+    dispatch(addBook(newBook));
+    localStorage.setItem('storeBook', JSON.stringify(store.getState().booksReducer));
     setInfo(JSON.parse(localStorage.getItem('storeBook')));
   };
 
   const rmBook = (book) => {
-    const newInfo = info.filter((livre) => livre !== book);
-    localStorage.setItem('storeBook', JSON.stringify(newInfo));
+    dispatch(removeBook(book));
+    localStorage.setItem('storeBook', JSON.stringify(store.getState().booksReducer));
     setInfo(JSON.parse(localStorage.getItem('storeBook')));
   };
 
@@ -55,7 +38,7 @@ const Books = () => {
 
   return (
     <div>
-      <Form addBook={addBook} />
+      <Form addBook={submitBookToStore} />
       <ul>
         {booklist}
       </ul>
