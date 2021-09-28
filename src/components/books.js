@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
 import Book from './book';
 import Form from './form';
+import { addBook } from '../redux/books/books';
 
 const Books = () => {
   if (JSON.parse(localStorage.getItem('storeBook')) === null) {
@@ -29,14 +32,18 @@ const Books = () => {
     localStorage.setItem('storeBook', JSON.stringify(initInfo));
   }
 
-  const [info, setInfo] = useState(JSON.parse(localStorage.getItem('storeBook')));
+  const dispatch = useDispatch();
 
-  const addBook = (book) => {
-    const newInfo = info;
-    newInfo.push(book);
-    localStorage.setItem('storeBook', JSON.stringify(newInfo));
-    setInfo(JSON.parse(localStorage.getItem('storeBook')));
+  const submitBookToStore = (title, author) => {
+    const newBook = {
+      id: uuidv4(), // make sure it's unique
+      title,
+      author,
+    };
+    dispatch(addBook(newBook));
   };
+
+  const [info, setInfo] = useState(JSON.parse(localStorage.getItem('storeBook')));
 
   const rmBook = (book) => {
     const newInfo = info.filter((livre) => livre !== book);
@@ -55,7 +62,7 @@ const Books = () => {
 
   return (
     <div>
-      <Form addBook={addBook} />
+      <Form addBook={submitBookToStore} />
       <ul>
         {booklist}
       </ul>
