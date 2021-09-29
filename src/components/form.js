@@ -10,7 +10,6 @@ const Form = ({ addBook }) => {
   };
 
   const handleSubmit = (event) => {
-    console.log(book);
     addBook(book);
     event.preventDefault();
   };

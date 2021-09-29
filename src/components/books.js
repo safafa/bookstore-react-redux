@@ -9,19 +9,6 @@ const Books = () => {
   const dispatch = useDispatch();
   const info = useSelector((state) => state.booksReducer);
 
-  useEffect(() => {
-    dispatch(getBooks());
-  }, []);
-
-  const submitBookToStore = (book) => {
-    const newBook = {
-      item_id: uuidv4(), // make sure it's unique
-      title: book.title,
-      category: book.category,
-    };
-    dispatch(addBook(newBook));
-  };
-
   const rmBook = (book) => {
     dispatch(removeBook(book));
   };
@@ -34,6 +21,19 @@ const Books = () => {
       key={info.indexOf(book)}
     />
   ));
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
+  const submitBookToStore = (book) => {
+    const newBook = {
+      item_id: uuidv4(), // make sure it's unique
+      title: book.title,
+      category: book.category,
+    };
+    dispatch(addBook(newBook));
+  };
 
   return (
     <div>
