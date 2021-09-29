@@ -10,13 +10,14 @@ const Form = ({ addBook }) => {
   };
 
   const handleSubmit = (event) => {
+    console.log(book);
     addBook(book);
     event.preventDefault();
   };
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
-      <input name="author" placeholder="author" value={book.author} onChange={(event) => handleChange(event)} />
       <input name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
+      <input name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
       <input type="submit" value="Submit" />
     </form>
 
