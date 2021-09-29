@@ -37,10 +37,10 @@ const Books = () => {
 
   return (
     <div>
-      <Form addBook={submitBookToStore} />
-      <ul>
+      <ul className="booksList">
         {booklist}
       </ul>
+      <Form addBook={submitBookToStore} />
     </div>
   );
 };
