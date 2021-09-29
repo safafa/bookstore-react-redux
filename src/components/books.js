@@ -19,7 +19,6 @@ const Books = () => {
       title: book.title,
       category: book.category,
     };
-    console.log(newBook);
     dispatch(addBook(newBook));
   };
 
@@ -27,7 +26,6 @@ const Books = () => {
     dispatch(removeBook(book));
   };
 
-  console.log(info);
   const booklist = info.map((book) => (
     <Book
       title={book.title}

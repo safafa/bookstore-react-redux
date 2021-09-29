@@ -25,7 +25,15 @@ export const getBooks = () => async (dispatch) => {
 export const addBook = (book) => async (dispatch) => {
   const created = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/OUkbJoOxy2T99jHKMB3y/books', {
     method: 'POST',
-    body: JSON.stringify(book),
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: book.item_id,
+      title: book.title,
+      category: book.category,
+    }),
   });
   if (created) {
     dispatch({
