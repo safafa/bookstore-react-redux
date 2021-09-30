@@ -12,14 +12,10 @@
   justify-content: space-evenly;
 }
 
-.bookInfo {
-  background-color: aquamarine;
-}
-
 .category {
   width: 3.063rem;
   height: 1.125rem;
-  margin: 0 2.438rem 0 0;
+  margin: 0 4rem 0 0;
   opacity: 0.5;
   font-size: 0.875rem;
   font-family: 'Montserrat', sans-serif;
@@ -34,7 +30,7 @@
 .title {
   width: 12.313rem;
   height: 1.813rem;
-  margin: 0.188rem 20.188rem 0 0;
+  margin: 0.188rem 2.125rem 0 0;
   font-size: 1.375rem;
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
@@ -45,12 +41,27 @@
   color: var(--black-two);
 }
 
+.author {
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
 .buttonsList {
   list-style: none;
   display: flex;
-  width: 20%;
+  width: 90%;
   justify-content: space-between;
   padding: 0;
+  margin-top: 20%;
 }
 
 .button {
@@ -67,7 +78,13 @@
 }
 
 .completedSection {
-  background-color: gainsboro;
+  display: flex;
+  margin: auto;
+}
+
+.completion {
+  display: flex;
+  flex-direction: column;
 }
 
 .Rectangle-3 {
@@ -116,8 +133,19 @@
   color: #121212;
 }
 
+.line {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin-top: 5%;
+  border-left: solid 1px #e8e8e8;
+}
+
+.liner {
+  display: flex;
+  margin: auto 0;
+}
+
 .chapterSection {
-  background-color: honeydew;
   display: flex;
   flex-direction: column;
 }

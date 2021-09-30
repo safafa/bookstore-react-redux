@@ -17,15 +17,18 @@ const Book = ({ title, category, rmBook }) => (
     </div>
     <div className="completedSection">
       <div className="Oval-2" />
-      <div>
+      <div className="completion">
         <span className="percent">60%</span>
         <span className="completed">Completed</span>
       </div>
     </div>
-    <div className="chapterSection">
-      <span className="currChapter">CURRENT CHAPTER</span>
-      <span className="chapter">Chapter 17</span>
-      <button type="button" className="progress">Update progress</button>
+    <div className="liner">
+      <div className="line" />
+      <div className="chapterSection">
+        <span className="currChapter">CURRENT CHAPTER</span>
+        <span className="chapter">Chapter 17</span>
+        <button type="button" className="progress">Update progress</button>
+      </div>
     </div>
   </li>
 );
