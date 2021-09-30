@@ -14,12 +14,14 @@ const Form = ({ addBook }) => {
     event.preventDefault();
   };
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
-      <input name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
-      <input name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
-      <input type="submit" value="Submit" />
-    </form>
-
+    <section className="formsection">
+      <h1 className="formTitle"> Add new Book </h1>
+      <form onSubmit={(event) => handleSubmit(event)}>
+        <input name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
+        <input name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
+        <input type="submit" value="Submit" />
+      </form>
+    </section>
   );
 };
 
