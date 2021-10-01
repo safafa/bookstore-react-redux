@@ -77,6 +77,16 @@
   border: none;
 }
 
+.right-border {
+  border-right: solid 1px #e8e8e8;
+  padding-right: 15px;
+}
+
+.left-border {
+  border-left: solid 1px #e8e8e8;
+  padding-left: 15px;
+}
+
 .completedSection {
   display: flex;
   margin: auto;

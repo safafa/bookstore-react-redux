@@ -10,9 +10,9 @@ const Book = ({ title, category, rmBook }) => (
       <h1 className="title">{title}</h1>
       <span className="author">Fulan Fulan</span>
       <ul className="buttonsList">
-        <li><button type="button" className="button">Comments</button></li>
-        <li><button type="button" className="button side-border" onClick={rmBook}>Remove</button></li>
-        <li><button type="button" className="button">Edit</button></li>
+        <li><span type="button" className="button right-border ">Comments</span></li>
+        <li><button type="button" className="button " onClick={rmBook}>Remove</button></li>
+        <li><span type="button" className="button left-border">Edit</span></li>
       </ul>
     </div>
     <div className="completedSection">
