@@ -15,13 +15,13 @@ const Form = ({ addBook }) => {
     event.preventDefault();
   };
   return (
-    <section className="formsection">
+    <section className="formsection bg-white">
       <div className="linef" />
-      <h1 className="formTitle"> Add new Book </h1>
-      <form onSubmit={(event) => handleSubmit(event)}>
-        <input className="titleInput" name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
-        <input className="categoryInput" name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
-        <button type="submit" value="Submit" className="formSubmit">ADD BOOK</button>
+      <h1 className="formTitle font-normal montserrat-font"> Add new Book </h1>
+      <form onSubmit={(event) => handleSubmit(event)} className="d-flex">
+        <input className="titleInput bg-white" name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
+        <input className="categoryInput bg-white" name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
+        <button type="submit" value="Submit" className="formSubmit font-normal roboto-font">ADD BOOK</button>
       </form>
     </section>
   );

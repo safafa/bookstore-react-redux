@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Slab:wght@300;700&display=swap');
+
 .booksList {
   list-style: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.font-normal {
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.roboto-font {
+  font-family: 'Roboto Slab', serif;
+}
+
+.montserrat-font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.azure-color {
+  color: #4386bf;
 }
