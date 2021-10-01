@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../css/form.css';
 
 const Form = ({ addBook }) => {
   const [book, setBook] = useState({});
@@ -15,11 +16,12 @@ const Form = ({ addBook }) => {
   };
   return (
     <section className="formsection">
+      <div className="linef" />
       <h1 className="formTitle"> Add new Book </h1>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <input name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
-        <input name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
-        <input type="submit" value="Submit" />
+        <input className="titleInput" name="title" placeholder="title" value={book.title} onChange={(event) => handleChange(event)} />
+        <input className="categoryInput" name="category" placeholder="category" value={book.category} onChange={(event) => handleChange(event)} />
+        <button type="submit" value="Submit" className="formSubmit">ADD BOOK</button>
       </form>
     </section>
   );
