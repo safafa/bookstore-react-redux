@@ -35,8 +35,7 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Live Demo
-
-Not deployed yet
+[Live Demo](https://relaxed-nightingale-a1e9b4.netlify.app/)
 
 ## Author
 
